@@ -1,26 +1,30 @@
-var playerScore = 0;
-var computerScore = 0;
+var playerSelection = prompt("Do you choose rock, paper, or scissors");
+var computerSelection = Math.random();
 
-function computerPlay() {
-    let i = Math.floor(Math.random() * 3);
-    const array = ["rock", "paper", "scissors"]
-    return array[i];
+if (computerSelection < 0.34) {
+    computerSelection = "rock";
+} else if (computerSelection <= 0.67) {
+    computerSelection = "paper";
+} else {
+    computerSelection = "scissors";
 }
+console.log("Computer: " + computerSelection);
 
-function playRound(playerSelection, computerSelection) {
-    computerSelection = computerPlay().toLowerCase();
-    playerSelection = computerPlay().toLowerCase();
 
-    if (computerSelection === playerSelection) {
-        return 0;
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        return -1;
-    } else if (playerSelection == "scissor" && computerSelection == "scissor") {
-        return -1;
-    } else if (playerSelection == "scissor" && computerSelection == "rock") {
-        return -1
-    } else {
-        return 1;
-    }
-}
-
+function playRound(choice1, choice2) {
+    if (choice1 === choice2) {
+        return "The results are a tie";
+    } else if {
+        (choice 1 === "rock") {
+            if (choice2 === "scissors") {
+                return "rock wins";
+            }
+        } else {
+            return "paper wins";
+        } else if (choice2 === "paper") {
+            if (choice2 === "rock") {
+                return "paper wins";
+            } else {
+                return "scissors wins";
+            }
+        }
